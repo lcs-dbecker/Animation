@@ -19,10 +19,10 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        x = random(from: 0, toButNotIncluding: 501)
         
-        //Value for y
-        y = 250
+        // Starting position for y
+        y = random(from: 0, toButNotIncluding: 501)
       
         // Set the starting change
         dx = 1
@@ -45,7 +45,16 @@ class Sketch : NSObject {
         if y > 500{
             dy += -1
         }
- // make the dot go up and down 
+ // let it bounce left
+        if x < 0{
+            dx += 1
+        }
+        
+    // let it bounce right
+        if y < 0 {
+            dy += 1
+        }
+        
         // Draw background
         canvas.fillColor = Color.white
         canvas.drawRectangle(centreX: 250, centreY: 250, width: 500, height: 500)
