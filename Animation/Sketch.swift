@@ -47,7 +47,7 @@ class Sketch : NSObject {
         //draw third line
         
         canvas.fillColor = Color.green
-        canvas.drawEllipse(centreX: 250-x, centreY: 250-x, width: 50, height: 50)
+        canvas.drawEllipse(centreX: 0+x, centreY: 500-x, width: 50, height: 50)
         
         // Change position
         x += 1
